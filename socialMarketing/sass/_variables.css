@@ -1,0 +1,44 @@
+@font-face {
+  font-family: "Raleway-Heavy";
+  src: url(raleway/Raleway-Heavy.ttf); }
+
+@font-face {
+  font-family: "Raleway-Bold";
+  src: url(raleway/Raleway-Bold.ttf); }
+
+@font-face {
+  font-family: "Lato-Regular";
+  src: url(lato/Lato-Regular.ttf); }
+
+@font-face {
+  font-family: "Lato-Light";
+  src: url(lato/Lato-Light.ttf); }
+
+@font-face {
+  font-family: "Merriweather-Regular";
+  src: url(merriweather/Merriweather-Regular.ttf); }
+
+@font-face {
+  font-family: "Merriweather-Light";
+  src: url(merriweather/Merriweather-Light.ttf); }
+
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url(opensans/OpenSans-Bold.ttf); }
+
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url(opensans/OpenSans-Regular.ttf); }
+
+@font-face {
+  font-family: "OpenSans-Semibold";
+  src: url(opensans/OpenSans-Semibold.ttf); }
+
+/*
+@mixin respond-to($media) {
+  @if $media == small {
+    @media only screen and (max-width: 768px) { @content; }
+  }
+}*/
+
+/*# sourceMappingURL=_variables.css.map */
