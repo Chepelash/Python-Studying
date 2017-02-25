@@ -1,0 +1,269 @@
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+@font-face {
+  font-family: "Raleway-Heavy";
+  src: url(raleway/Raleway-Heavy.ttf); }
+@font-face {
+  font-family: "Raleway-Bold";
+  src: url(raleway/Raleway-Bold.ttf); }
+@font-face {
+  font-family: "Lato-Regular";
+  src: url(lato/Lato-Regular.ttf); }
+@font-face {
+  font-family: "Lato-Light";
+  src: url(lato/Lato-Light.ttf); }
+@font-face {
+  font-family: "Merriweather-Regular";
+  src: url(merriweather/Merriweather-Regular.ttf); }
+@font-face {
+  font-family: "Merriweather-Light";
+  src: url(merriweather/Merriweather-Light.ttf); }
+@font-face {
+  font-family: "OpenSans-Bold";
+  src: url(opensans/OpenSans-Bold.ttf); }
+@font-face {
+  font-family: "OpenSans-Regular";
+  src: url(opensans/OpenSans-Regular.ttf); }
+@font-face {
+  font-family: "OpenSans-Semibold";
+  src: url(opensans/OpenSans-Semibold.ttf); }
+/*
+@mixin respond-to($media) {
+  @if $media == small {
+    @media only screen and (max-width: 768px) { @content; }
+  }
+}*/
+body {
+  width: 100%;
+  box-sizing: border-box; }
+
+.top-block {
+  background-color: rgba(0, 0, 0, 0.9);
+  padding-bottom: 230px;
+  padding-top: 260px; }
+  .top-block .header {
+    font-family: "Raleway-Heavy";
+    color: white;
+    font-size: 110px;
+    font-weight: 800;
+    line-height: 90px;
+    text-align: center;
+    text-transform: uppercase; }
+  .top-block .line {
+    background-color: #da491c;
+    height: 3px;
+    margin-top: 50px; }
+  .top-block .text, .top-block .footer .emailTips, .footer .top-block .emailTips {
+    font-family: "Merriweather-Regular";
+    color: #ccc;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: center;
+    margin-top: 50px; }
+
+.second-block {
+  padding-top: 80px; }
+  .second-block .header {
+    font-family: "OpenSans-Bold";
+    color: #333;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 48px;
+    text-align: left;
+    text-transform: uppercase; }
+  .second-block .text, .second-block .footer .emailTips, .footer .second-block .emailTips {
+    font-family: "Merriweather-Light";
+    color: #333;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 30px;
+    text-align: left;
+    margin-top: 30px; }
+  .second-block .line {
+    background-color: #da491c;
+    height: 2px;
+    margin-top: 75px; }
+
+.bottom-block {
+  padding-bottom: 80px;
+  padding-top: 80px; }
+  .bottom-block .header {
+    font-family: "OpenSans-Semibold";
+    color: #333;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 36px;
+    text-align: left;
+    text-transform: uppercase; }
+  .bottom-block .text, .bottom-block .footer .emailTips, .footer .bottom-block .emailTips {
+    font-family: "OpenSans-Regular";
+    color: #646464;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    margin-top: 35px; }
+  .bottom-block .social {
+    margin: 20px 0;
+    text-align: left; }
+    .bottom-block .social .socialBtn {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      border-radius: 27px;
+      color: white;
+      display: inline-block;
+      position: relative;
+      padding: 0;
+      text-decoration: none;
+      text-align: center;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1.95em; }
+    .bottom-block .social .facebookBtn {
+      background: #4060A5; }
+    .bottom-block .social .facebookBtn:before {
+      font-family: "FontAwesome";
+      content: "\f09a"; }
+    .bottom-block .social .twitterBtn {
+      background: #00ABE3; }
+    .bottom-block .social .twitterBtn:before {
+      font-family: "FontAwesome";
+      content: "\f099"; }
+    .bottom-block .social .googleplusBtn {
+      background: #e64522; }
+    .bottom-block .social .googleplusBtn:before {
+      font-family: "FontAwesome";
+      content: "\f0d5"; }
+    .bottom-block .social .linkedinBtn {
+      background: #0094BC; }
+    .bottom-block .social .linkedinBtn:before {
+      font-family: "FontAwesome";
+      content: "\f0e1"; }
+    .bottom-block .social .pinterestBtn {
+      background: #cb2027; }
+    .bottom-block .social .pinterestBtn:before {
+      font-family: "FontAwesome";
+      content: "\f0d2"; }
+
+.third-block {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding-top: 80px;
+  padding-bottom: 80px; }
+  .third-block .header {
+    font-family: "OpenSans-Semibold";
+    color: #ffffff;
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: left;
+    text-transform: uppercase; }
+  .third-block .text, .third-block .footer .emailTips, .footer .third-block .emailTips {
+    margin-top: 30px;
+    font-family: "Merriweather-Light";
+    color: #ccc;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 30px;
+    text-align: left; }
+  .third-block .btn {
+    margin-top: 40px;
+    background-color: transparent;
+    color: #ccc;
+    text-transform: uppercase;
+    font-family: "OpenSans-Regular";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: center;
+    padding: 1.25em 4.3em; }
+
+.footer {
+  background-color: #444;
+  padding-top: 80px; }
+  .footer .header {
+    text-transform: uppercase;
+    font-family: "Raleway-Bold";
+    color: white;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: left; }
+  .footer .text, .footer .emailTips {
+    font-family: "Lato-Regular";
+    color: #999;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left; }
+  .footer a {
+    font-family: "Lato-Regular";
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+    text-transform: uppercase;
+    padding: 8px; }
+  .footer a:hover {
+    color: #999; }
+  .footer input[type="email"] {
+    margin-top: 40px;
+    font-family: "Lato-Light";
+    color: #555;
+    font-size: 60px;
+    font-weight: 300;
+    text-align: left;
+    background: none;
+    height: auto;
+    border-style: none;
+    border-bottom: 1px solid #999; }
+  .footer .emailTips {
+    font-size: 16px;
+    margin-top: 10px; }
+  .footer .social {
+    margin: 20px 0;
+    text-align: left; }
+    .footer .social .socialBtn {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      border-radius: 27px;
+      color: #444;
+      display: inline-block;
+      position: relative;
+      padding: 0;
+      text-decoration: none;
+      text-align: center;
+      font-size: 16px;
+      font-weight: normal;
+      line-height: 1.95em;
+      background: #ccc; }
+    .footer .social .facebookBtn:before {
+      font-family: "FontAwesome";
+      content: "\f09a"; }
+    .footer .social .twitterBtn:before {
+      font-family: "FontAwesome";
+      content: "\f099"; }
+    .footer .social .googleplusBtn:before {
+      font-family: "FontAwesome";
+      content: "\f0d5"; }
+    .footer .social .linkedinBtn:before {
+      font-family: "FontAwesome";
+      content: "\f0e1"; }
+    .footer .social .pinterestBtn:before {
+      font-family: "FontAwesome";
+      content: "\f0d2"; }
+    .footer .social .githubBtn:before {
+      font-family: "FontAwesome";
+      content: "\f09b"; }
+  .footer .copyrights {
+    font-family: "Lato-Regular";
+    color: #777;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+    margin-top: 80px; }
+
+/*# sourceMappingURL=style.css.map */
