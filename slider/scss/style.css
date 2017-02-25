@@ -1,0 +1,266 @@
+@font-face {
+  font-family: "Helvetica-Bold";
+  src: url(css/fonts/helvetica/HelveticaNeueCyr-Bold.otf); }
+@font-face {
+  font-family: "Helvetica-Regular";
+  src: url(css/fonts/helvetica/HelveticaNeueCyr-Regular.ttf); }
+@font-face {
+  font-family: "OpenSans-Light";
+  src: url(css/fonts/opensans/OpenSans-Light.ttf); }
+header .row {
+  height: 100px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0; }
+  header .row .logo, header .row .search {
+    height: inherit;
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat; }
+  header .row .search {
+    height: 100px; }
+  header .row a {
+    font-family: "Helvetica-Bold";
+    font-size: 11px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    height: 100px;
+    padding-top: 40px; }
+  header .row a:hover {
+    border-bottom: solid 3px #f00;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+    color: white; }
+
+.carousel-caption {
+  position: static; }
+
+#Bigcarousel .carousel-caption {
+  height: 880px;
+  font-family: "OpenSans-Light";
+  font-size: 24px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase; }
+  #Bigcarousel .carousel-caption .textBox {
+    width: 70%;
+    margin: 200px auto 0; }
+    #Bigcarousel .carousel-caption .textBox span {
+      margin-top: 30px;
+      font-size: 100px;
+      text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+      display: block; }
+    #Bigcarousel .carousel-caption .textBox p {
+      text-transform: none;
+      margin-top: 30px;
+      padding: 0;
+      text-align: center; }
+    #Bigcarousel .carousel-caption .textBox .presents {
+      margin-top: 175px; }
+
+.secondBox {
+  margin-top: 90px;
+  padding-bottom: 80px;
+  text-align: center;
+  border-bottom: 1px solid #333; }
+  .secondBox .imageBox {
+    margin: 0 auto;
+    width: 110px;
+    height: 110px;
+    border-radius: 5px; }
+  .secondBox .textBox .header {
+    font-family: "OpenSans-Light";
+    font-size: 25px;
+    font-weight: 300;
+    color: #333;
+    margin-top: 30px; }
+  .secondBox .textBox .text {
+    font-family: "Helvetica-Regular";
+    font-size: 12px;
+    font-weight: 400;
+    color: #666;
+    text-align: center;
+    line-height: 20px; }
+  .secondBox .left .imageBox {
+    background: url(../images/04744-assets/chat.png) no-repeat center, linear-gradient(to top right, #efa52d 0%, #8c5f10 50%, #754a01 95%) no-repeat center; }
+  .secondBox .center .imageBox {
+    background: url(../images/04744-assets/heart.png) no-repeat center, linear-gradient(45deg, #2dd5ef 0%, #10798c 50%, #016475 95%) no-repeat center; }
+  .secondBox .right .imageBox {
+    background: url(../images/04744-assets/ship.png) no-repeat center, linear-gradient(45deg, #ed3b00 0%, #8c3310 50%, #752201 94%) no-repeat center; }
+
+.thirdTextBox {
+  margin-top: 90px;
+  text-align: center;
+  width: 60%; }
+  .thirdTextBox span {
+    font-family: "OpenSans-Light";
+    font-size: 48px;
+    font-weight: 300;
+    color: #333; }
+  .thirdTextBox .text {
+    padding: 20px; }
+
+.contentBoxes {
+  text-align: center;
+  margin-top: 45px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #333; }
+  .contentBoxes .imageBox {
+    margin: 0 auto;
+    width: 300px;
+    height: 220px;
+    position: relative;
+    overflow: hidden; }
+    .contentBoxes .imageBox a {
+      position: absolute;
+      top: 40%;
+      left: 30%;
+      display: none;
+      color: rgba(255, 255, 255, 0.6);
+      font-family: "Helvetica-Regular";
+      font-size: 12px;
+      font-weight: 400;
+      background: #dd3f19;
+      width: 114px;
+      height: 36px;
+      box-sizing: border-box; }
+  .contentBoxes .imageBox:hover a {
+    display: inline-block;
+    box-shadow: 0px 0px 60px 200px rgba(0, 0, 0, 0.7); }
+  .contentBoxes .likes {
+    font-size: 13px;
+    line-height: 20px; }
+    .contentBoxes .likes label {
+      border: none;
+      padding: 0; }
+    .contentBoxes .likes label:hover, .contentBoxes .likes label.btn.btn-default.active {
+      color: red;
+      background-color: white; }
+    .contentBoxes .likes label.btn.btn-default.active {
+      box-shadow: none; }
+
+.carouselBox {
+  text-align: center;
+  margin-top: 50px; }
+  .carouselBox .carousel, .carouselBox .carousel-caption {
+    width: 300px;
+    height: 220px;
+    margin: 0 auto; }
+  .carouselBox .carousel-indicators {
+    bottom: 0; }
+  .carouselBox .carousel-control {
+    background-image: none;
+    margin: 0 auto; }
+    .carouselBox .carousel-control .glyphicon-menu-right, .carouselBox .carousel-control .glyphicon-menu-left {
+      display: block;
+      position: absolute;
+      top: 45%;
+      z-index: 5;
+      font-size: 60px; }
+    .carouselBox .carousel-control .glyphicon-menu-right {
+      right: 10%; }
+    .carouselBox .carousel-control .glyphicon-menu-left {
+      left: 10%; }
+  .carouselBox .carousel-control, .carouselBox .carousel-indicators {
+    display: none; }
+  .carouselBox .carousel:hover .carousel-control, .carouselBox .carousel:hover .carousel-indicators {
+    display: inline-block; }
+  .carouselBox .textBox .header {
+    width: 75%;
+    text-decoration: none;
+    font-family: "OpenSans-Light";
+    font-size: 18px;
+    font-weight: 300px;
+    line-height: 21px;
+    color: #333;
+    margin: 30px auto 12px; }
+  .carouselBox .textBox a {
+    text-decoration: none; }
+  .carouselBox .textBox .header:hover {
+    color: #dd3f19; }
+  .carouselBox .textBox .postHeader {
+    font-family: "Helvetica-Regular";
+    font-size: 11px;
+    font-weight: 400;
+    color: #adadad;
+    border-bottom: 1px solid #adadad;
+    width: 45%;
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 12px; }
+  .carouselBox .textBox .text {
+    font-family: "Helvetica-Regular";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    color: #555;
+    width: 70%;
+    margin: 25px auto; }
+  .carouselBox .textBox .info {
+    font-family: "OpenSans-Light";
+    font-size: 11px;
+    font-weight: 400;
+    color: #adadad;
+    border-top: 1px solid #adadad;
+    border-bottom: 1px solid #adadad;
+    padding-bottom: 15px;
+    padding-top: 15px; }
+
+footer {
+  margin-top: 90px;
+  background: linear-gradient(to right, #75172b 0%, #486c87 36%, #577184 68%, #1368a5 95%);
+  height: 400px;
+  position: relative; }
+  footer .logo, footer header .row .search, header .row footer .search {
+    height: inherit;
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 27px;
+    margin-top: 70px; }
+  footer .text {
+    width: 40%;
+    margin: 70px auto 0;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: "Helvetica-Regular";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px; }
+  footer .social {
+    margin-top: 28px;
+    text-align: center; }
+    footer .social a {
+      background: none;
+      color: white;
+      border: none; }
+    footer .social a:hover, footer .social a:focus {
+      color: red;
+      background: none; }
+    footer .social nav {
+      display: inline-flex;
+      border: 1px solid #fff;
+      border-radius: 2px;
+      padding: 0 20px 0; }
+  footer .footerInfo {
+    font-family: "Helvetica-Regular";
+    font-size: 12px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding-top: 20px; }
+    footer .footerInfo a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none; }
+    footer .footerInfo span {
+      padding: 10px; }
+
+/*# sourceMappingURL=style.css.map */

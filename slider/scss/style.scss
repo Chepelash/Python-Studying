@@ -1,0 +1,306 @@
+@import "_variables.scss";
+header{
+    .row{
+        height: 100px;
+        width:100%;
+        background-color:  rgba(0, 0, 0, 0.6);
+        position: absolute;
+        top:0;
+        .logo{
+            @include centralLogos();
+        }
+        .search{
+            @extend .logo;
+            height:100px;
+        }
+        a{
+            @include instFont("Helvetica-Bold",11px,700);
+            color: rgba(255, 255, 255, 0.6);
+            text-transform: uppercase;
+            height: 100px;
+            padding-top: 40px;
+            
+        }
+        a:hover{
+            border-bottom: solid 3px #f00;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-decoration: none;
+            color: rgba(255, 255, 255, 1);
+        }        
+    }
+}
+.carousel-caption{    
+    position:static;    
+}
+#Bigcarousel {
+    .carousel-caption{
+        
+        height: 880px;
+        @include instFont("OpenSans-Light",24px,300);
+        color:rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+        .textBox{            
+            width:70%;
+            margin: 200px auto 0;
+            span{
+                margin-top: 30px;
+                font-size: 100px;
+                text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
+                display: block;
+            }
+            p{
+                text-transform: none;
+                margin-top: 30px;
+                padding: 0;
+                
+                text-align: center;
+            }
+            .presents{
+                margin-top: 175px;
+            }
+        }
+    }
+}
+.secondBox{
+    margin-top: 90px;
+    padding-bottom: 80px;
+    text-align: center;    
+    border-bottom: 1px solid #333;
+    .imageBox{        
+        margin: 0 auto;
+        width:110px;
+        height:110px;
+        border-radius: 5px;
+        
+    }
+    .textBox{
+        .header{
+            @include instFont("OpenSans-Light",25px,300);
+            color:  #333;
+            margin-top: 30px;
+        }
+        .text{
+            @include instFont("Helvetica-Regular",12px,400);
+            color:#666;
+            text-align: center;
+            line-height: 20px;
+        }
+    }
+    .left{
+        .imageBox{           
+            background: url(../images/04744-assets/chat.png) no-repeat center,linear-gradient(to top right, #efa52d 0%, #8c5f10 50%, #754a01 95%) no-repeat center;
+        }
+        
+    }
+    .center{
+        .imageBox{
+            background: url(../images/04744-assets/heart.png) no-repeat center,linear-gradient(45deg, #2dd5ef 0%,#10798c 50%,#016475 95%) no-repeat center;
+        }
+    }
+    .right{
+        .imageBox{
+            background: url(../images/04744-assets/ship.png) no-repeat center,linear-gradient(45deg, #ed3b00 0%,#8c3310 50%,#752201 94%) no-repeat center;
+        }
+    }
+}
+
+
+
+.thirdTextBox{
+    margin-top:90px;
+    text-align: center;
+    width:60%;
+    span{
+        @include instFont("OpenSans-Light",48px,300);
+        color:  #333;
+    }
+    .text{
+        padding: 20px;
+    }
+}
+.contentBoxes{
+    text-align: center; 
+    margin-top: 45px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid #333;
+    .imageBox{
+        margin: 0 auto;
+        width:300px;
+        height:220px;
+        position: relative;
+        overflow: hidden;
+        a{
+            position: absolute;                
+            top:40%;
+            left:30%;
+            display: none;
+            color:  rgba(255, 255, 255, 0.6);
+            @include instFont("Helvetica-Regular",12px,400);
+            background:  #dd3f19;
+            width: 114px;
+            height: 36px;
+            box-sizing: border-box;
+        }
+
+    }
+    .imageBox:hover{        
+        a{
+            display: inline-block;
+            box-shadow: 0px 0px 60px 200px rgba(0,0,0,0.7);
+        }
+    }
+    .likes{
+        font-size: 13px;
+        line-height: 20px;        
+        label{
+            border: none;
+            padding: 0;
+        }
+        label:hover{
+            color:red;
+            background-color: white;
+        }
+        label.btn.btn-default.active{
+            @extend label:hover;
+            box-shadow: none;                
+        }
+        
+    }
+}
+.carouselBox{
+    text-align: center;
+    margin-top:50px;
+    .carousel,.carousel-caption{
+        width:300px;
+        height:220px;
+        margin: 0 auto;
+    }
+    .carousel-indicators{
+        bottom: 0;
+    }
+    .carousel-control{
+        background-image: none;
+        margin: 0 auto;
+        .glyphicon-menu-right,.glyphicon-menu-left{
+            display: block;
+            position: absolute;
+            top: 45%;
+            z-index: 5;
+            font-size: 60px;       
+            
+        }
+        .glyphicon-menu-right{
+            right:10%;
+        }
+        .glyphicon-menu-left{
+            left:10%;
+        }       
+    }
+    .carousel-control,.carousel-indicators{
+        display: none;
+    }
+    .carousel:hover{
+        .carousel-control,.carousel-indicators{
+            display: inline-block;
+        }
+    }
+    .textBox{
+        .header{
+            width:75%;
+            text-decoration: none;
+            @include instFont("OpenSans-Light",18px,300px);
+            line-height: 21px;
+            color:#333;
+            margin: 30px auto 12px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .header:hover{
+            color:#dd3f19;
+        }
+        .postHeader{
+            @include instFont("Helvetica-Regular",11px,400);
+            color:#adadad;
+            border-bottom: 1px solid #adadad;
+            width:45%;
+            text-align: center;
+            margin:0 auto;
+            padding-bottom: 12px;
+        }
+        .text{
+            @include instFont("Helvetica-Regular",12px,400);
+            line-height: 20px;
+            color:#555;
+            width: 70%;
+            margin:25px auto;
+        }
+        .info{
+            @include instFont("OpenSans-Light",11px,400);
+            color: #adadad;
+            border-top: 1px solid #adadad;
+            border-bottom: 1px solid #adadad;
+            padding-bottom: 15px;
+            padding-top: 15px;
+        }
+        
+    }
+    
+}
+footer{
+    margin-top:90px;
+    background: linear-gradient(to right, #75172b 0%,#486c87 36%,#577184 68%,#1368a5 95%);
+    height:400px;
+    position: relative;
+    .logo{
+        @include centralLogos();
+        height:27px;
+        margin-top: 70px;
+    }
+    .text{        
+        width:40%;
+        margin: 70px auto 0;
+        text-align:center;
+        color:  rgba(255, 255, 255, 0.6);
+        @include instFont("Helvetica-Regular",12px,400);
+        line-height: 20px;
+    }
+    .social{
+        margin-top: 28px;
+        text-align: center;
+        a{
+            background: none;
+            color: white;
+            border:none;
+        }
+        a:hover,a:focus{
+            color:red;
+            background: none;
+        }
+        nav{
+            display: inline-flex;
+            border:1px solid #fff;
+            border-radius: 2px;
+            padding: 0 20px 0;
+        }
+    }
+    .footerInfo{
+        @include instFont("Helvetica-Regular",12px,400);
+        color:  rgba(255, 255, 255, 0.6);
+        position: absolute;
+        width:100%;
+        bottom: 0;
+        left: 0;
+        height:60px;
+        text-align: center;
+        background-color:  rgba(0, 0, 0, 0.2);
+        padding-top: 20px;
+        a{
+            color:  rgba(255, 255, 255, 0.6);
+            text-decoration: none;
+        }
+        span{
+            padding: 10px;
+        }
+    }
+}
