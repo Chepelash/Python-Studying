@@ -1,0 +1,5 @@
+DEBUG      2017-04-24 12:04:15,089 Using selector: EpollSelector
+INFO       2017-04-24 12:04:15,090 Enter _task task2
+INFO       2017-04-24 12:04:15,090 Enter _task task1
+INFO       2017-04-24 12:04:20,093 End _task task2
+INFO       2017-04-24 12:04:22,091 End _task task1

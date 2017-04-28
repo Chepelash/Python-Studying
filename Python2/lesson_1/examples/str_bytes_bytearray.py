@@ -22,5 +22,4 @@ h = hashlib.md5()
 # Добавление данных для расчёта суммы - можно добавлять только строку байтов
 h.update(b'Python')
 # Вывод хэш-суммы
-print(type(h.hexdigest()))
 print(h.hexdigest())
