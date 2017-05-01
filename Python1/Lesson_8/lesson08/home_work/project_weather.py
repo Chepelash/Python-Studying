@@ -82,7 +82,7 @@ def get_city_id(cities, grabber, apid_key):
     print('{:*^30}'.format('Погода'))
     city_id = None
     while True:
-        choise = input('Введите название города (quit - выход)\n>>> ').capitalize()
+        choise = input('\nВведите название города (quit - выход)\n>>> ').capitalize()
         if choise == 'Quit':
             print('Выход из программы')
             sys.exit()
@@ -96,7 +96,7 @@ def get_city_id(cities, grabber, apid_key):
                     suggest.append(line['name'])
         if city_id is not None:
             get_weather_data(grabber, city_id, apid_key)
-            break
+            continue
 
         print("Уточните название")
         if len(suggest):
