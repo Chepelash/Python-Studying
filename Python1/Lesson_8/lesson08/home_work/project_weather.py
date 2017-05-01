@@ -9,26 +9,26 @@ import urllib.request
 import grab
 
 
-def connect(url, grabber, queue):
+def connect(url, grabber):
     """Авторизация на сайте и получения apid ключа для запроса
     """
     grabber.go(url)
-    grabber.set_input('user[email]', 'weather_zora@mail.ru')
-    grabber.set_input('user[password]', 'Simple_Weather')
-    grabber.submit()
+    grabber.doc.set_input('user[email]', 'weather_zora@mail.ru')
+    grabber.doc.set_input('user[password]', 'Simple_Weather')
+    grabber.doc.submit()
     page = gr.doc.unicode_body()
     success = re.search(r"(?<=<div class='panel-body'>)(.*)(?=</div>)", page)
-    if 'success' not in success:
+    if 'success' not in success.group(0):
         sys.exit(1)
 
     grabber.go('https://home.openweathermap.org/api_keys')
     page = gr.doc.unicode_body()
-    apid_key = re.search(r"(?<=<pre>)(.*)(?=</pre>)", page)
+    apid_key = re.search(r"(?<=<pre>)(.*)(?=</pre>)", page).group(0)
 
-    queue.put(apid_key)
+    return apid_key
 
 
-def get_cities():
+def get_cities(queue):
     # Downloading city names
     url = 'http://bulk.openweathermap.org/sample/city.list.json.gz'
     try:
@@ -47,7 +47,8 @@ def get_cities():
     cities = gzip.open(out, 'rb').read().decode()
 
     # List of dictionaries with cities' info
-    return [json.loads(line) for line in cities.split('\n')[:-1]]
+    names = [json.loads(line) for line in cities.split('\n')[:-1]]
+    queue.put(names)
 
 
 def get_weather_data(grabber, id, apid_key):
@@ -63,7 +64,11 @@ if __name__ == '__main__':
     url = 'https://home.openweathermap.org/users/sign_in'
     gr = grab.Grab(log_file='out.html')
     queue = mp.Queue()
-    authtorization = mp.Process(target=connect, args=(url, gr, queue))
-    city_names = get_cities()
-    apid_key = queue.get()
-    authtorization.join()
+    download_names = mp.Process(target=get_cities, args=(queue,))
+    download_names.start()
+    apid_key = connect(url, gr)
+    city_names = queue.get()
+    download_names.join()
+    print('done')
+    print(apid_key)
+    print(city_names)
