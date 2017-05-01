@@ -78,8 +78,8 @@ def get_weather_data(grabber, city_id, apid_key):
 def get_city_id(cities, grabber, apid_key):
     """Получаем от пользователя id города
     """
-    pp = pprint.PrettyPrinter(width=30, compact=True)
-    print('{:*^30}'.format('Погода'))
+    pp = pprint.PrettyPrinter(width=40, compact=True)
+    print('{:*^40}'.format('Погода'))
     city_id = None
     while True:
         choise = input('\nВведите название города (quit - выход)\n>>> ').capitalize()
@@ -116,7 +116,6 @@ if __name__ == '__main__':
     apid_key = connect(url, gr)
     cities = queue.get()
     download_names.join()
-    print('done')
 
     # Та часть, где пользователь вводит данные
     get_city_id(cities, gr, apid_key)
