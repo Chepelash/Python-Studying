@@ -3,6 +3,7 @@ import os
 import sys
 import re
 import multiprocessing as mp
+import pprint
 import gzip
 import json
 import urllib.request
@@ -29,6 +30,8 @@ def connect(url, grabber):
 
 
 def get_cities(queue):
+    """Скачивание словаря с названиями городов
+    """
     # Downloading city names
     url = 'http://bulk.openweathermap.org/sample/city.list.json.gz'
     try:
@@ -51,24 +54,69 @@ def get_cities(queue):
     queue.put(names)
 
 
-def get_weather_data(grabber, id, apid_key):
-    url = 'http://api.openweathermap.org/data/2.5/weather?\
-           id={}&units=metric&appid={}'.format(id, apid_key)
+def get_weather_data(grabber, city_id, apid_key):
+    """Получение и вывод данных о погоде
+    """
+
+    def printing(data):
+        """Вывод погоды в красивом виде
+        """
+        print('{:-^30}'.format('Погода сегодня'))
+        print('Температура: {}'.format(data['main']['temp']))
+        print('Условия: {}'.format(data['weather'][0]['description']))
+        print('Давление: {}'.format(data['main']['pressure']))
+        print('Влажность : {}'.format(data['main']['humidity']))
+
+
+    url = ('http://api.openweathermap.org/data/2.5/weather?'
+          'id={}&units=metric&lang=ru&appid={}').format(city_id, apid_key)
     grabber.go(url)
     weather_data = json.loads(grabber.doc.unicode_body())
+    printing(weather_data)
 
-    return weather_data
+
+def get_city_id(cities, grabber, apid_key):
+    """Получаем от пользователя id города
+    """
+    pp = pprint.PrettyPrinter(width=30, compact=True)
+    print('{:*^30}'.format('Погода'))
+    city_id = None
+    while True:
+        choise = input('Введите название города (quit - выход)\n>>> ').capitalize()
+        if choise == 'Quit':
+            print('Выход из программы')
+            sys.exit()
+        else:
+            suggest = []
+            for line in cities:
+                if choise == line['name']:
+                    city_id = line['_id']
+                    break
+                elif line['name'].startswith(choise[:int(len(choise) / 1.5)]):
+                    suggest.append(line['name'])
+        if city_id is not None:
+            get_weather_data(grabber, city_id, apid_key)
+            break
+
+        print("Уточните название")
+        if len(suggest):
+            print("Возможные варианты:")
+            pp.pprint(suggest)
+        else:
+            print('не обнаружено совпадений')
 
 
 if __name__ == '__main__':
+    # Та часть, где получаем все необходимые данные
     url = 'https://home.openweathermap.org/users/sign_in'
     gr = grab.Grab(log_file='out.html')
     queue = mp.Queue()
     download_names = mp.Process(target=get_cities, args=(queue,))
     download_names.start()
     apid_key = connect(url, gr)
-    city_names = queue.get()
+    cities = queue.get()
     download_names.join()
     print('done')
-    print(apid_key)
-    print(city_names)
+
+    # Та часть, где пользователь вводит данные
+    get_city_id(cities, gr, apid_key)
